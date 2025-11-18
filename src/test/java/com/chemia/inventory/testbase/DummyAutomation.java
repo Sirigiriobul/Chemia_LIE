@@ -6,6 +6,7 @@ public class DummyAutomation extends BaseClass{
 
 	@Test
 	public void testCaseDummy() throws InterruptedException {
+		
 		driver.get("https://tutorialsninja.com/demo/");
 	
 	}

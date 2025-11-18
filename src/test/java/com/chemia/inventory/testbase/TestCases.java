@@ -380,8 +380,8 @@ public class TestCases extends BaseClass {
 			homePage.waitForLoaderRemoval();
 			addBatch.clickAddButton();
 			homePage.waitForLoaderRemoval();
-			addBatch.setMaterialCode("materialCodeCKoVd");     //add materialCode while executing whole
-			addBatch.selectVendorName("Vendor codepoosI");      //add vendorName while executing whole
+			addBatch.setMaterialCode(materialCode);     //add materialCode while executing whole
+			addBatch.selectVendorName(vendorName);      //add vendorName while executing whole
 			batchNumberData = (excelUtil.getCellData("Add Batch", 1, 1)) + randomString();
 			addBatch.setBatchNumber(batchNumberData);
 			addBatch.selectReceivedQuantity(excelUtil.getCellData("Add Batch", 1, 2));
@@ -436,7 +436,7 @@ public class TestCases extends BaseClass {
 	public void Tc10_AddEquipmentCatalogue() throws Exception {
 		SoftAssert sa = new SoftAssert();
 		try {
-			//loggingIntoApplication(excelUtil.getCellData("Login Credentials", 1, 1));
+			loggingIntoApplication(excelUtil.getCellData("Login Credentials", 1, 1));
 			homePage.clickEquipmentCatalogueMenu();
 			homePage.clickEquipmentCatalogueSubMenu();
 			homePage.waitForLoaderRemoval();
@@ -527,7 +527,7 @@ public class TestCases extends BaseClass {
 	public void Tc11_AddInstrumentCatalogue() throws Exception {
 		SoftAssert sa = new SoftAssert();
 		try {
-			//loggingIntoApplication(excelUtil.getCellData("Login Credentials", 1, 1));
+			loggingIntoApplication(excelUtil.getCellData("Login Credentials", 1, 1));
 			homePage.clickHomePageButton();
 			homePage.waitForLoaderRemoval();
 			homePage.clickHamIcon();
@@ -583,9 +583,7 @@ public class TestCases extends BaseClass {
 			addEquipmentCatalogue.clickFinalEquipmentConfirm();
 			homePage.waitForLoaderRemoval();
 			Thread.sleep(3000);
-			
-			
-			
+					
 			
 		} catch (Exception e) {
 			sa.fail("context: " + e.getMessage());
@@ -746,7 +744,7 @@ public class TestCases extends BaseClass {
 			loggingIntoApplication(excelUtil.getCellData("Login Credentials", 2, 1));
 			homePage.clickEquipmentVerificationTab();
 			Thread.sleep(2000);
-			verifyBatch.setSearchBar("Equip CodextWqk");   //
+			verifyBatch.setSearchBar(EquipmentCodeData);   //
 			Thread.sleep(2000);
 			verifyBatch.clickVerifyButton();
 			Thread.sleep(2000);
@@ -773,7 +771,7 @@ public class TestCases extends BaseClass {
 		loggingIntoApplication(excelUtil.getCellData("Login Credentials", 2, 1));
 			homePage.clickInstrumentVerificationTab();
 			Thread.sleep(2000);
-			verifyBatch.setSearchBar("Instrument CodeOROov");
+			verifyBatch.setSearchBar(InstrumentCodeData);
 			Thread.sleep(2000);
 			verifyBatch.clickVerifyButton();
 			Thread.sleep(2000);
@@ -800,7 +798,7 @@ public class TestCases extends BaseClass {
 		try {
 			loggingIntoApplication(excelUtil.getCellData("Login Credentials", 2, 1));			homePage.clickColumnVerificationTab();
 			Thread.sleep(2000);
-			verifyBatch.setSearchBar("columnNumberaoUJB");
+			verifyBatch.setSearchBar(columnNameData);
 			Thread.sleep(2000);
 			verifyBatch.clickVerifyButton();
 			Thread.sleep(2000);
@@ -944,7 +942,7 @@ public class TestCases extends BaseClass {
 	}
 	
 	
-	/*
+	
 	
 		
 
@@ -970,7 +968,7 @@ public class TestCases extends BaseClass {
 			System.out.println(e);
 		}
 	}
-	
+	/*
 	@Test
 	public void Tc31_addLIEDataToExperiment() throws Exception {
 		SoftAssert sa = new SoftAssert();
@@ -1011,7 +1009,7 @@ public class TestCases extends BaseClass {
 
 	
 	
-	
+	*/
 	
 	
 	
@@ -1260,8 +1258,14 @@ public class TestCases extends BaseClass {
 		} finally {
 			sa.assertAll();
 		}
-
 	}
-	*/
-
+	
 }
+
+
+
+
+
+
+
+
