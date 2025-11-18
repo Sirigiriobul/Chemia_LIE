@@ -407,9 +407,10 @@ public class TestCases extends BaseClass {
 			homePage.waitForLoaderRemoval();
 			addBatch.clickDisableYesButton();
 			Thread.sleep(2000);
+			homePage.waitForLoaderRemoval();
+			addBatch.clickSearchbar(batchNumberData);
 			addBatch.clickActionsOptn(excelUtil.getCellData("Add Batch", 1, 13));
 			homePage.waitForLoaderRemoval();
-			
 			
 			addBatch.clickActionsOptn(excelUtil.getCellData("Add Batch", 1, 10));
 			Thread.sleep(1000);
@@ -508,7 +509,7 @@ public class TestCases extends BaseClass {
 			homePage.waitForLoaderRemoval();
 			addEquipmentCatalogue.clickFinalEquipmentSubmit();
 			Thread.sleep(3000);
-			addEquipmentCatalogue.setAuthenticationDetails(excelUtil.getCellData("Login Credentials", 0, 2));
+			addEquipmentCatalogue.setAuthenticationDetails(excelUtil.getCellData("Login Credentials", 1, 2));
 			addEquipmentCatalogue.clickFinalEquipmentConfirm();
 			homePage.waitForLoaderRemoval();
 			Thread.sleep(3000);
@@ -579,7 +580,7 @@ public class TestCases extends BaseClass {
 			homePage.waitForLoaderRemoval();
 			addEquipmentCatalogue.clickFinalEquipmentSubmit();
 			Thread.sleep(3000);
-			addEquipmentCatalogue.setAuthenticationDetails("Chemia@12345");
+			addEquipmentCatalogue.setAuthenticationDetails(excelUtil.getCellData("Login Credentials", 1, 2));
 			addEquipmentCatalogue.clickFinalEquipmentConfirm();
 			homePage.waitForLoaderRemoval();
 			Thread.sleep(3000);
@@ -763,7 +764,8 @@ public class TestCases extends BaseClass {
 		}
 	}
 
-	@Test(priority = 18//, dependsOnMethods = { "Tc11_AddInstrumentCatalogue" }
+	@Test(priority = 18
+			//, dependsOnMethods = { "Tc11_AddInstrumentCatalogue" }
 			)
 	public void Tc18_VerifyInstrument() throws Exception {
 		SoftAssert sa = new SoftAssert();

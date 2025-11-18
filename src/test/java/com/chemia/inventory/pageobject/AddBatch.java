@@ -233,7 +233,6 @@ public class AddBatch extends BasePage {
 		WebElement element = eUtil.waitForElementClickable(By.xpath("//input[contains(@placeholder,'Search')]"), 10);
 		eUtil.doClear(element);
 		eUtil.doSendKeys(element, searchData);
-
 	}
 
 	public void clickResultantActionsIcon(String text) {
